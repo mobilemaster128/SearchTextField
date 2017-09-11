@@ -287,7 +287,8 @@ open class SearchTextField: UITextField {
                 shadowFrame.origin.y = tableView.frame.origin.y
                 shadowView!.frame = shadowFrame
             } else {
-                let tableHeight = min((tableView.contentSize.height), (UIScreen.main.bounds.size.height - frame.origin.y - theme.cellHeight))
+                //let tableHeight = min((tableView.contentSize.height), (UIScreen.main.bounds.size.height - frame.origin.y - theme.cellHeight))
+                let tableHeight = min((tableView.contentSize.height), (frame.origin.y - theme.cellHeight))
                 UIView.animate(withDuration: 0.2, animations: { [weak self] in
                     self?.tableView?.frame = CGRect(x: frame.origin.x + 2, y: (frame.origin.y - tableHeight), width: frame.size.width - 4, height: tableHeight)
                     self?.shadowView?.frame = CGRect(x: frame.origin.x + 3, y: (frame.origin.y + 3), width: frame.size.width - 6, height: 1)
